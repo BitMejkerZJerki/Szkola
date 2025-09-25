@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            background-color: #ececec;
+        }
+
+        h1{
+            font-size: 3vh;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        #wyswietlacz{
+            width: auto;
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        #wyswietlacz table{
+            width: 700px;
+            height: 700px;    
+            border-collapse: collapse;
+        
+
+        }
+
+        #wyswietlacz td{
+            border: black 1px solid;
+            background-color: white;
+        }
+
+        #paseknarzedzia{
+            width: auto;
+            height: 20vh;
+            background-color: #313131;
+            color: aliceblue;
+        }
+
+        #paseknarzedzia h1{
+            margin-top: 5px
+        }
+    </style>
+</head>
+<body>
+    <h1>Wyświetlacz</h1>
+    <div id="wyswietlacz">
+        <table>
+            <tbody>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>     
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>                              
+            </tbody>
+        </table>
+    </div>
+    <div id="paseknarzedzia">
+        <h1>Pasek narzędzi</h1>
+        <div id="narzedzia">
+            <div id="pedzel">
+                <p>Pędzel</p>
+                <select>
+                    <option>Black</option>
+                    <option>Red</option>
+                    <option>Blue</option>
+                    <option>Green</option>
+                </select>
+                <input id="color" type="color">
+            </div>
+        </div>
+    </div>
+<script>
+const tds = document.querySelectorAll("td");
+const select = document.querySelector("#color");
+
+tds.forEach(td => {
+    td.addEventListener("click", function() {
+        const kolor = getComputedStyle(this).backgroundColor;
+        if (kolor === "rgb(255, 255, 255)") {
+            this.style.backgroundColor = select.value;
+        } else {
+            this.style.backgroundColor = "white";
+        }
+    });
+});
+</script>
+
+
+
+</body>
+</html>

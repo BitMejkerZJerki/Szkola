@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="inpt1">Input:</label>
+        <input id="inpt1" type="text">
+        <button type="submit" id="btn1">Submit</button>
+    </form>
+
+    <script>
+        let btn = document.querySelector('#btn1');
+        let inpt1 = document.querySelector('#inpt1');
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); 
+            btn.style.background = 'cyan'; 
+            inpt1.style.background = 'cyan';
+
+            let p = document.createElement("p");
+            p.textContent = inpt1.value;
+            document.body.appendChild(p);
+        });
+    </script>
+</body>
+</html>

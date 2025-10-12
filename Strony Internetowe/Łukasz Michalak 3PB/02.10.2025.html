@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes a1 {
+            0% { transform: scale(1.0); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1.0); }
+        }
+        body {
+            margin: 0px;
+        }
+        p {
+            width: 200px;
+            height: 100px;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: rgb(85, 85, 85);
+            margin: 10px;
+            border-radius: 5px;
+            color: white;
+            animation: a1 infinite 2000ms;
+        }
+        input {
+            width: 200px;
+            height: 20px;
+            border: 1px solid black;
+            transition: all 300ms;
+            margin: 10px;
+
+        }
+        input:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="Treść w środku diva...">
+    <button id="btn" onclick="pisz()">Prześlij</button>
+    
+    <script>
+        let input1 = document.querySelector("#input1");
+        let btn = document.querySelector("#btn");
+
+        function pisz() {
+            const divek = document.createElement("p");
+            divek.innerHTML = input1.value || "No text entered";
+            document.body.appendChild(divek);
+        }
+    </script>
+</body>
+</html>

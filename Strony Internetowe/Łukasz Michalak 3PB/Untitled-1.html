@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div{
+        height: 100px;
+        width: 100px;
+        background-color: black;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <button id="jeden">1</button>
+    <button id="dwa">2</button>
+    <button id="trzy">3</button>
+    <div id="jeden">
+        1
+    </div>
+
+    <div id="dwa">
+2
+    </div>
+
+    <div id="trzy">
+    3
+    </div>
+    <script>
+    const jeden= document.getElementById("jeden")
+    const dwa= document.getElementById("dwa")
+    const trzy= document.getElementById("trzy")
+
+    jeden.addEventListener(click, jeden.style, pokaz())
+    dwa.addEventListener(click, dwa.style, pokaz())
+    trzy.addEventListener(click, trzy.style, pokaz())
+   
+        jeden.style.setProperty("display", "block");
+
+    
+    </script>
+    
+</body>
+</html>

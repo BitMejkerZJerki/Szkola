@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            background-color: #333;
+        }
+
+        header h1{
+            color: #ddd;
+            display: flex;
+            justify-content: center;
+            transform: scaleY(2)
+        }
+
+        #zamowienie{
+            display: flex;
+            height: 500px;
+            width: 100%;
+            background-color: #333 ;
+            justify-content: center;
+            align-items: center;
+            color: #d6d6d6;
+            transition: all 300ms;
+        }
+
+        #zamowienie:hover{
+            filter: brightness(1.25);
+        }
+
+        #form, #koszyk{
+            transition: all 250ms;
+            height: 300px;
+            width: 300px;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 20px
+        }
+
+        #form:hover, #koszyk:hover{
+            transform: scale(1.20);
+            background-color: #5a5a5a;
+            box-shadow: 0px 0px 20px #5a5a5a;
+            border-radius: 20px;
+            margin: 50px
+        }
+
+        #koszyk img:hover{
+            margin-left: 20px;
+        }
+
+        #koszyk img{
+            display: grid;
+            width: 100px;
+            transition: all 200ms;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SKLEP FOTOexpress</h1>
+    </header>
+<div id="zamowienie">
+    <br>
+    <div id="form">
+        <p>Zamówienie</p>
+        <label>Wybierz obraz</label>
+        <input type="file" id="plik" accept="image/png, image/jpeg" />
+        <br>
+        <label>Liczba kopii: </label>
+        <input type="number">
+        <br>
+        <input type="radio" name="radio1" checked="1"><label>Papier błyszczący</label>
+        <input type="radio" name="radio1"><label>Papier matowy</label>
+        <br><br>
+        <button type="submit" id="btn1">Dodaj do koszyka</button>
+        <br><br>
+    </div>
+    <div id="koszyk">
+        <p>Koszyk 🛒</p> 
+        <div id="produkty"></div>
+        <div id="paragraf"></div>
+    </div>
+</div> 
+</body>
+<script>
+    const btn1 = document.querySelector("#btn1")
+    const koszyk = document.querySelector("#koszyk")
+    const produkty = document.querySelector("#produkty")
+
+    btn1.addEventListener("click", function przeslij() {
+        let img = document.createElement("img")
+        img.src = URL.createObjectURL(document.querySelector("#plik").files[0])
+        koszyk.appendChild(img)
+        koszyk.innerHTML("<p>cena</p>")
+        
+
+        const paragraf = document.createElement("p")
+        paragraf.innerHTML = "Cena:"
+        paragraf.idName = "#paragraf"
+        document.body.appendChild(paragraf)
+    })
+
+    
+</script>
+</html>
